@@ -1,6 +1,6 @@
 import { useMemo } from 'preact/hooks'
 import supporters from '../../supporters.json'
-import { Card, ChangelogEntry, Footer, GeneratorCard, Giscus, ToolCard, ToolGroup } from '../components/index.js'
+import { Card, ChangelogEntry, Footer, GeneratorCard, ToolCard, ToolGroup } from '../components/index.js'
 import { WhatsNewTime } from '../components/whatsnew/WhatsNewTime.jsx'
 import { useLocale, useTitle } from '../contexts/index.js'
 import { useAsync } from '../hooks/useAsync.js'
@@ -38,13 +38,9 @@ export function Home({}: Props) {
 					</div>
 					{!smallScreen && <div class="card-column">
 						<FavoriteGenerators />
-						<WhatsNew />
-						<Tools />
 					</div>}
 				</>}
 			</div>
-			<Contributors />
-			<Giscus />
 			<Footer />
 		</div>
 	</main>

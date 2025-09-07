@@ -1,3 +1,8 @@
+# Forked
+this repo is a fork, check out and support the original!
+
+
+original readme:
 # misode.github.io
 > Data Pack Generators for Minecraft Java Edition
 

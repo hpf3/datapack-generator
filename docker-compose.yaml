@@ -2,8 +2,11 @@ version: "3.9"
 
 services:
   datapack:
-    # Build the Docker image using the local Dockerfile
-    build: .
+    image: hpf3/datapack-generator
+    build:
+      context: .
+      dockerfile: Dockerfile   # optional if your file is named "Dockerfile"
+      pull: true     
     # Always restart the container unless it is manually stopped
     restart: unless-stopped
     # No environment variables are required when serving static files with Nginx

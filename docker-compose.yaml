@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  datapack:
+    # Build the Docker image using the local Dockerfile
+    build: .
+    # Always restart the container unless it is manually stopped
+    restart: unless-stopped
+    # No environment variables are required when serving static files with Nginx
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.services.datapack.loadbalancer.server.port=80"
+
+networks:
+  default:
+    name: web_bridge
+    external: true

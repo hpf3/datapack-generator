@@ -1,0 +1,20 @@
+{
+  "type": "oregrowth:ore_growth",
+  "base": [
+    "mythicmetals:unobtainium_ore",
+    "mythicmetals:deepslate_unobtainium_ore"
+  ],
+  "stages": 4,
+  "spawn_chance": 0.1,
+  "growth_chance": 0.05,
+  "drops": [
+    {
+      "stage": 4,
+      "chance": 0.3,
+      "item": {
+        "id": "mythicmetals:unobtainium",
+        "count": 1
+      }
+    }
+  ]
+}

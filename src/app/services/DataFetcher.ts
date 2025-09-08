@@ -140,6 +140,9 @@ export async function fetchPreset(versionId: VersionId, registry: string, id: st
 		let url
 		if (id.startsWith('immersive_weathering:')) {
 			url = `https://raw.githubusercontent.com/AstralOrdana/Immersive-Weathering/main/src/main/resources/data/immersive_weathering/block_growths/${id.slice(21)}.json`
+		} else if (id.startsWith('oregrowth:')) {
+			// Local preset files for the Oregrowth partner generator
+			url = `/presets/oregrowth/recipes/${id.slice(10)}.json`
 		} else {
 			const type = ['atlases', 'blockstates', 'items', 'font', 'lang', 'models', 'equipment', 'post_effect'].includes(registry) ? 'assets' : 'data'
 			url = `${mcmeta(version, type)}/${type}/minecraft/${registry}/${id}.json`

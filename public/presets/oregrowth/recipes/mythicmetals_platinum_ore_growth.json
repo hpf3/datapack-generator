@@ -1,0 +1,33 @@
+{
+  "type": "oregrowth:ore_growth",
+  "base": "mythicmetals:platinum_ore",
+  "stages": 4,
+  "spawn_chance": 0.2,
+  "growth_chance": 0.2,
+  "drops": [
+    {
+      "stage": 4,
+      "item": {
+        "id": "mythicmetals:raw_platinum",
+        "count": 1
+      }
+    },
+    {
+      "stage": 4,
+      "chance": 0.1,
+      "item": {
+        "id": "mythicmetals:platinum_nugget",
+        "count": 1
+      }
+    },
+    {
+      "min_stage": 1,
+      "max_stage": 3,
+      "chance": 0.1,
+      "item": {
+        "id": "mythicmetals:raw_platinum",
+        "count": 1
+      }
+    }
+  ]
+}

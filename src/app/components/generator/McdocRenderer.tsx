@@ -11,6 +11,7 @@ import { getValues } from '@spyglassmc/mcdoc/lib/runtime/completer/index.js'
 import { Identifier, ItemStack } from 'deepslate'
 import DOMPurify from 'dompurify'
 import { marked } from 'marked'
+import { Fragment } from 'preact'
 import { useCallback, useEffect, useMemo, useState } from 'preact/hooks'
 import config from '../../Config.js'
 import { useLocale } from '../../contexts/Locale.jsx'
@@ -377,7 +378,7 @@ function UnionHead({ type, optional, node, ctx }: Props<UnionType<SimplifiedMcdo
 	const { locale } = useLocale()
 
 	if (type.members.length === 0) {
-		return <></>
+		return <Fragment></Fragment>
 	}
 
 	const selectedType = selectUnionMember(type, node)
@@ -409,21 +410,40 @@ function UnionHead({ type, optional, node, ctx }: Props<UnionType<SimplifiedMcdo
 }
 
 function formatUnionMember(type: SimplifiedMcdocTypeNoUnion, others: SimplifiedMcdocTypeNoUnion[]): string {
-	if (type.kind === 'literal') {
-		return formatIdentifier(type.value.value.toString())
-	}
-	if (!others.some(o => o.kind === type.kind)) {
-		// No other member is of this kind
-		return formatIdentifier(type.kind === 'struct' ? 'object' : type.kind)
-	}
-	if (type.kind === 'struct') {
-		// Show the first literal key
-		const firstKey = type.fields.find(f => f.key.kind === 'literal')?.key
-		if (firstKey) {
-			return formatUnionMember(firstKey, [])
-		}
-	}
-	return formatIdentifier(type.kind === 'struct' ? 'object' : type.kind)
+    // DEBUG: union label tracing — find and remove before commit
+    try { console.debug('[DEBUG_MCDOC_LABEL] formatUnionMember kind=', (type as any).kind, 'attrs=', (type as any).attributes) } catch {}
+    // Prefer a custom label attribute when present
+    const labelAttr: any = (type as any).attributes?.find?.((a: any) => a.name === 'label')?.value
+    if (labelAttr && labelAttr.kind === 'literal' && labelAttr.value?.kind === 'string') {
+        try { console.debug('[DEBUG_MCDOC_LABEL] using #[label] =', labelAttr.value.value) } catch {}
+        return labelAttr.value.value
+    }
+    if (type.kind === 'literal') {
+        return formatIdentifier(type.value.value.toString())
+    }
+    if (!others.some(o => o.kind === type.kind)) {
+        // No other member is of this kind
+        return formatIdentifier(type.kind === 'struct' ? 'object' : type.kind)
+    }
+    if (type.kind === 'struct') {
+        // If any field carries a #[label="..."] attribute, use that (generic, schema-driven)
+        try {
+            const fieldWithLabel: any = type.fields.find((f: any) => f.attributes?.some((a: any) => a.name === 'label'))
+            const fieldLabel: any = fieldWithLabel?.attributes?.find?.((a: any) => a.name === 'label')?.value
+            if (fieldLabel && fieldLabel.kind === 'literal' && fieldLabel.value?.kind === 'string') {
+                try { console.debug('[DEBUG_MCDOC_LABEL] using field #[label] =', fieldLabel.value.value) } catch {}
+                return fieldLabel.value.value
+            }
+        } catch {}
+        // Show the first literal key
+        const firstKey = type.fields.find(f => f.key.kind === 'literal')?.key
+        if (firstKey) {
+            // DEBUG: firstKey label fallback
+            try { console.debug('[DEBUG_MCDOC_LABEL] falling back to firstKey=', (firstKey as any).value?.value) } catch {}
+            return formatUnionMember(firstKey, [])
+        }
+    }
+    return formatIdentifier(type.kind === 'struct' ? 'object' : type.kind)
 }
 
 function UnionBody({ type, optional, node, ctx }: Props<UnionType<SimplifiedMcdocTypeNoUnion>>) {

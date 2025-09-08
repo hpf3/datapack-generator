@@ -1,0 +1,24 @@
+{
+  "type": "oregrowth:ore_growth",
+  "base": "betternether:nether_redstone_ore",
+  "stages": 2,
+  "spawn_chance": 0.2,
+  "growth_chance": 0.2,
+  "drops": [
+    {
+      "stage": 2,
+      "item": {
+        "id": "minecraft:redstone",
+        "count": 1
+      }
+    },
+    {
+      "stage": 1,
+      "chance": 0.6,
+      "item": {
+        "id": "minecraft:redstone",
+        "count": 1
+      }
+    }
+  ]
+}

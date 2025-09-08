@@ -1,0 +1,417 @@
+[
+  {
+    "name": "abstoneedition_bismuth_ore_growth"
+  },
+  {
+    "name": "abstoneedition_silver_ore_growth"
+  },
+  {
+    "name": "abstoneedition_uranium_ore_growth"
+  },
+  {
+    "name": "aether_ambrosium_ore_growth"
+  },
+  {
+    "name": "aether_gravitite_ore_growth"
+  },
+  {
+    "name": "aether_zanite_ore_growth"
+  },
+  {
+    "name": "ancient_debris_growth"
+  },
+  {
+    "name": "betterend_amber_ore_growth"
+  },
+  {
+    "name": "betterend_ender_ore_growth"
+  },
+  {
+    "name": "betterend_thallasium_ore_growth"
+  },
+  {
+    "name": "betternether_cincinnasite_ore_growth"
+  },
+  {
+    "name": "betternether_nether_lapis_ore_growth"
+  },
+  {
+    "name": "betternether_nether_redstone_ore_growth"
+  },
+  {
+    "name": "betternether_nether_ruby_ore_growth"
+  },
+  {
+    "name": "biggerreactors_uranium_ore_growth"
+  },
+  {
+    "name": "bigreactors_anglesite_ore_growth"
+  },
+  {
+    "name": "bigreactors_benitoite_ore_growth"
+  },
+  {
+    "name": "bigreactors_yellorite_ore_growth"
+  },
+  {
+    "name": "coal_ore_growth"
+  },
+  {
+    "name": "copper_ore_growth"
+  },
+  {
+    "name": "create_zinc_ore_growth"
+  },
+  {
+    "name": "deep_aether_skyjade_ore_growth"
+  },
+  {
+    "name": "diamond_ore_growth"
+  },
+  {
+    "name": "emerald_ore_growth"
+  },
+  {
+    "name": "enderscape_nebulite_ore_growth"
+  },
+  {
+    "name": "enderscape_shadow_quartz_ore_growth"
+  },
+  {
+    "name": "gemsnjewels_alexandrite_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_amethyst_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_ametrine_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_aquamarine_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_black_opal_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_citrine_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_diamond_nether_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_emerald_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_garnet_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_iolite_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_kunzite_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_morganite_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_opal_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_pale_diamond_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_peridot_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_ruby_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_sapphire_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_spinel_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_tanzanite_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_topaz_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_tourmaline_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_v_emerald_nether_ore_block_growth"
+  },
+  {
+    "name": "gemsnjewels_zircon_ore_block_growth"
+  },
+  {
+    "name": "gold_ore_growth"
+  },
+  {
+    "name": "indrev_lead_ore_growth"
+  },
+  {
+    "name": "indrev_nikolite_ore_growth"
+  },
+  {
+    "name": "indrev_silver_ore_growth"
+  },
+  {
+    "name": "indrev_tin_ore_growth"
+  },
+  {
+    "name": "indrev_tungsten_ore_growth"
+  },
+  {
+    "name": "iron_ore_growth"
+  },
+  {
+    "name": "lapis_ore_growth"
+  },
+  {
+    "name": "mekanism_fluorite_ore_growth"
+  },
+  {
+    "name": "mekanism_lead_ore_growth"
+  },
+  {
+    "name": "mekanism_osmium_ore_growth"
+  },
+  {
+    "name": "mekanism_tin_ore_growth"
+  },
+  {
+    "name": "mekanism_uranium_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_antimony_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_bauxite_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_iridium_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_lead_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_lignite_coal_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_monazite_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_nickel_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_platinum_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_quartz_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_salt_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_tin_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_titanium_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_tungsten_ore_growth"
+  },
+  {
+    "name": "modern_industrialization_uranium_ore_growth"
+  },
+  {
+    "name": "more_gems_alexandrite_ore_growth"
+  },
+  {
+    "name": "more_gems_carbonado_ore_growth"
+  },
+  {
+    "name": "more_gems_citrine_ore_growth"
+  },
+  {
+    "name": "more_gems_corundum_ore_growth"
+  },
+  {
+    "name": "more_gems_kunzite_ore_growth"
+  },
+  {
+    "name": "more_gems_moissanite_ore_growth"
+  },
+  {
+    "name": "more_gems_sapphire_ore_growth"
+  },
+  {
+    "name": "more_gems_spinel_ore_growth"
+  },
+  {
+    "name": "more_gems_topaz_ore_growth"
+  },
+  {
+    "name": "more_gems_tourmaline_ore_growth"
+  },
+  {
+    "name": "mysticalagriculture_inferium_ore_growth"
+  },
+  {
+    "name": "mysticalagriculture_prosperity_ore_growth"
+  },
+  {
+    "name": "mysticalagriculture_soulium_ore_growth"
+  },
+  {
+    "name": "mythicmetals_adamantite_ore_growth"
+  },
+  {
+    "name": "mythicmetals_aquarium_ore_growth"
+  },
+  {
+    "name": "mythicmetals_banglum_ore_growth"
+  },
+  {
+    "name": "mythicmetals_carmot_ore_growth"
+  },
+  {
+    "name": "mythicmetals_kyber_ore_growth"
+  },
+  {
+    "name": "mythicmetals_manganese_ore_growth"
+  },
+  {
+    "name": "mythicmetals_midas_gold_ore_growth"
+  },
+  {
+    "name": "mythicmetals_morkite_ore_growth"
+  },
+  {
+    "name": "mythicmetals_mythril_ore_growth"
+  },
+  {
+    "name": "mythicmetals_orichalcum_ore_growth"
+  },
+  {
+    "name": "mythicmetals_osmium_ore_growth"
+  },
+  {
+    "name": "mythicmetals_palladium_ore_growth"
+  },
+  {
+    "name": "mythicmetals_platinum_ore_growth"
+  },
+  {
+    "name": "mythicmetals_prometheum_ore_growth"
+  },
+  {
+    "name": "mythicmetals_quadrillum_ore_growth"
+  },
+  {
+    "name": "mythicmetals_runite_ore_growth"
+  },
+  {
+    "name": "mythicmetals_silver_ore_growth"
+  },
+  {
+    "name": "mythicmetals_starrite_ore_growth"
+  },
+  {
+    "name": "mythicmetals_stormyx_ore_growth"
+  },
+  {
+    "name": "mythicmetals_tin_ore_growth"
+  },
+  {
+    "name": "mythicmetals_unobtainium_ore_growth"
+  },
+  {
+    "name": "nether_gold_ore_growth"
+  },
+  {
+    "name": "nether_quartz_ore_growth"
+  },
+  {
+    "name": "pigsteel_porkslag_growth"
+  },
+  {
+    "name": "powah_uraninite_ore_dense_growth"
+  },
+  {
+    "name": "powah_uraninite_ore_growth"
+  },
+  {
+    "name": "powah_uraninite_ore_poor_growth"
+  },
+  {
+    "name": "pumpkin_crystals",
+    "minVersion": "1.20"
+  },
+  {
+    "name": "redstone_ore_growth"
+  },
+  {
+    "name": "rftoolsbase_dimensionalshard_overworld_growth"
+  },
+  {
+    "name": "spelunkery_andesite_coal_ore_growth"
+  },
+  {
+    "name": "spelunkery_andesite_copper_ore_growth"
+  },
+  {
+    "name": "spelunkery_andesite_gold_ore_growth"
+  },
+  {
+    "name": "spelunkery_andesite_iron_ore_growth"
+  },
+  {
+    "name": "spelunkery_diamond_ore_growth"
+  },
+  {
+    "name": "spelunkery_emerald_ore_growth"
+  },
+  {
+    "name": "spelunkery_lapis_ore_growth"
+  },
+  {
+    "name": "spelunkery_nether_gold_ore_growth"
+  },
+  {
+    "name": "spelunkery_redstone_ore_growth"
+  },
+  {
+    "name": "thermal_apatite_ore_growth"
+  },
+  {
+    "name": "thermal_cinnabar_ore_growth"
+  },
+  {
+    "name": "thermal_lead_ore_growth"
+  },
+  {
+    "name": "thermal_nickel_ore_growth"
+  },
+  {
+    "name": "thermal_niter_ore_growth"
+  },
+  {
+    "name": "thermal_ruby_ore_growth"
+  },
+  {
+    "name": "thermal_sapphire_ore_growth"
+  },
+  {
+    "name": "thermal_silver_ore_growth"
+  },
+  {
+    "name": "thermal_sulfur_ore_growth"
+  },
+  {
+    "name": "thermal_tin_ore_growth"
+  }
+]

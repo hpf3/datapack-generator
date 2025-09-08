@@ -1,0 +1,64 @@
+use ::java::world::component::DataComponentPatch
+
+dispatch minecraft:resource[oregrowth:recipes] to struct OreGrowthRecipe {
+  type: OregrowthRecipeType,
+  /// Blocks the crystal grows on. Accepts a single block or tag ("#namespace:path"),
+  /// or an array of such strings when multiple bases are desired.
+  base: Base,
+  /// Number of growth stages, max 4
+  stages: int @ 1..4,
+  /// Chance a crystal spawns when the base gets a random tick (> 0, ≤ 1)
+  spawn_chance: float @ 0<..1,
+  /// Chance the crystal grows on its random tick (> 0, ≤ 1)
+  growth_chance: float @ 0<..1,
+  /// Per‑stage drops; supports direct item or loot table
+  drops: [OreGrowthDrop] @ 1..
+}
+
+enum(string) OregrowthRecipeType {
+  OreGrowth = "oregrowth:ore_growth",
+}
+
+/// Single base as a block id or a tag string ("#namespace:path"),
+/// or an array of such entries.
+type Base = (
+  #[id(registry="block", tags="allowed")] string |
+  [#[id(registry="block", tags="allowed")] string]
+)
+
+type ItemStack = struct {
+  id: string,
+  count?: int @ 1..,
+}
+
+/// A single drop entry. Choose either:
+/// - an exact stage, or a [min_stage, max_stage] range; and
+/// - either a direct item or a loot table as the result.
+type OreGrowthDrop = (
+  struct {
+    #[label="Item (stage)"]
+    item: ItemStack,
+    stage: int @ 1..4,
+    chance?: float @ 0..1,
+  } |
+  struct {
+    #[label="Loot table (stage)"]
+    stage: int @ 1..4,
+    chance?: float @ 0..1,
+    loot_table: #[id="loot_table"] string,
+  } |
+  struct {
+    #[label="Item (range)"]
+    min_stage: int @ 1..4,
+    max_stage: int @ 1..4,
+    chance?: float @ 0..1,
+    item: ItemStack,
+  } |
+  struct {
+    #[label="Loot table (range)"]
+    loot_table: #[id="loot_table"] string,
+    min_stage: int @ 1..4,
+    max_stage: int @ 1..4,
+    chance?: float @ 0..1,
+  }
+)

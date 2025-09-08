@@ -1,3 +1,4 @@
+import { Fragment } from 'preact'
 import { route } from 'preact-router'
 import { useCallback, useEffect, useErrorBoundary, useMemo, useRef, useState } from 'preact/hooks'
 import type { Method } from '../../Analytics.js'
@@ -197,7 +198,31 @@ export function SchemaGenerator({ gen, allowedVersions }: Props) {
 	const { value: presets } = useAsync(async () => {
 		const registries = await fetchRegistries(version)
 		const entries = registries.get(gen.id) ?? []
-		return entries.map(e => e.startsWith('minecraft:') ? e.slice(10) : e)
+		let result = entries.map(e => e.startsWith('minecraft:') ? e.slice(10) : e)
+
+		// Include local partner presets for Oregrowth recipes
+		if (gen.id === 'oregrowth:recipes') {
+			try {
+				const res = await fetch('/presets/oregrowth/recipes/index.json', { cache: 'no-cache' })
+				if (res.ok) {
+					const localIndex = await res.json() as (string | { name: string, minVersion?: string, maxVersion?: string })[]
+					const set = new Set(result)
+					for (const entry of localIndex) {
+						if (typeof entry === 'string') {
+							set.add(`oregrowth:${entry}`)
+						} else {
+							// Filter by version if specified
+							if (checkVersion(version, entry.minVersion, entry.maxVersion)) {
+								set.add(`oregrowth:${entry.name}`)
+							}
+						}
+					}
+					result = Array.from(set)
+				}
+			} catch {}
+		}
+
+		return result
 	}, [version, gen.id])
 
 	const getPresets = useCallback((search: string, close: () => void) => {
@@ -380,7 +405,7 @@ export function SchemaGenerator({ gen, allowedVersions }: Props) {
 		setProjectUri(undefined)
 	}, [gen, service, showModal])
 
-	return <>
+	return <Fragment>
 		<main class={`${previewShown ? 'has-preview' : ''} ${projectShown ? 'has-project' : ''}`} style={`--project-panel-width: ${realPanelWidth}px`}>
 			<div class="controls generator-controls">
 				{gen.wiki && <a class="btn btn-link tooltipped tip-se" aria-label={locale('learn_on_the_wiki')} href={gen.wiki} target="_blank">
@@ -441,5 +466,5 @@ export function SchemaGenerator({ gen, allowedVersions }: Props) {
 			<ProjectPanel/>
 			<div class="panel-resize" onMouseDown={(e) => setResizeStart(e.clientX - panelWidth)}></div>
 		</div>
-	</>
+	</Fragment>
 }

@@ -1,0 +1,25 @@
+{
+  "type": "oregrowth:ore_growth",
+  "base": "more_gems:citrine_ore",
+  "stages": 4,
+  "spawn_chance": 0.15,
+  "growth_chance": 0.15,
+  "drops": [
+    {
+      "stage": 4,
+      "item": {
+        "id": "more_gems:citrine",
+        "count": 1
+      }
+    },
+    {
+      "min_stage": 1,
+      "max_stage": 3,
+      "chance": 0.1,
+      "item": {
+        "id": "more_gems:citrine",
+        "count": 1
+      }
+    }
+  ]
+}

@@ -26,5 +26,6 @@
 	"files.insertFinalNewline": true,
 	"files.trimFinalNewlines": true,
 	"typescript.tsdk": "node_modules\\typescript\\lib",
-	"js/ts.implicitProjectConfig.target": "ES2021"
+	"js/ts.implicitProjectConfig.target": "ES2021",
+	"chatgpt.openOnStartup": true
 }

@@ -35,6 +35,7 @@ COPY --from=build /usr/src/app/dist /usr/share/nginx/html
 # Copy a custom Nginx configuration to enable SPA routing
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+LABEL org.opencontainers.image.source https://github.com/hpf3/datapack-generator
 # Expose port 80 (the default HTTP port for Nginx)
 EXPOSE 80
 

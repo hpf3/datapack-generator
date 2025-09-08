@@ -1,5 +1,3 @@
-# .woodpecker/buildImages.yml
-
 when:
   event: [push, manual]
 
@@ -8,10 +6,8 @@ skip_clone: false
 steps:
   build:
     image: woodpeckerci/plugin-docker-buildx
-    privileged: true
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
     settings:
+      registry: ghcr.io 
       repo: ghcr.io/${CI_REPO_OWNER}/datapack-generator
       tags: latest
       platforms: linux/amd64,linux/arm64,linux/arm/v7

@@ -14,3 +14,10 @@ steps:
       username: hpf3
       password:
         from_secret: ghcr_token
+  trigger-portainer:
+    image: curlimages/curl:latest
+    environment:
+      WEBHOOK:
+        from_secret: webhook
+    commands:
+      - curl -sS -X POST "$WEBHOOK"

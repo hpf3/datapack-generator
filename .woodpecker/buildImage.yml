@@ -15,7 +15,6 @@ steps:
       repo: ghcr.io/${CI_REPO_OWNER}/datapack-generator
       tags: latest
       platforms: linux/amd64,linux/arm64,linux/arm/v7
-      username:
-        from_secret: ghcr_user
+      username: hpf3
       password:
         from_secret: ghcr_token

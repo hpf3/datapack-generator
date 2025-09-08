@@ -1,3 +1,4 @@
+import { Fragment } from 'preact'
 import { useMemo } from 'preact/hooks'
 import { Card, ChangelogEntry, Footer, GeneratorCard, ToolCard, ToolGroup } from '../components/index.js'
 import { WhatsNewTime } from '../components/whatsnew/WhatsNewTime.jsx'
@@ -70,7 +71,7 @@ function FavoriteGenerators() {
 		return history.slice(0, MAX_FAVORITES)
 	}, [])
 
-	if (favorites.length < MIN_FAVORITES) return <></>
+	if (favorites.length < MIN_FAVORITES) return <Fragment></Fragment>
 
 	return <ToolGroup title={locale('generators.recent')}>
 		{favorites.map(f => <GeneratorCard minimal id={f} />)}

@@ -1,0 +1,26 @@
+# .woodpecker/buildImages.yml
+
+when:
+  event: [push, manual]
+
+skip_clone: false
+
+steps:
+  build:
+    image: woodpeckerci/plugin-docker-buildx
+    privileged: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    settings:
+      repo: ghcr.io/${CI_REPO_OWNER}/datapack-generator
+      tags: latest
+      platforms: linux/amd64,linux/arm64,linux/arm/v7
+      username:
+        from_secret: ghcr_user
+      password:
+        from_secret: ghcr_token
+    commands:
+      - docker login ghcr.io -u $${GHCR_USER} -p $${GHCR_TOKEN}
+      - docker build --no-cache -t ghcr.io/${CI_REPO_OWNER}/datapack-generator:latest -f images/GodotBuild/Dockerfile images/GodotBuild
+      - echo "Pushing GodotBuild image to ghcr.io/${CI_REPO_OWNER}..."
+      - docker push ghcr.io/${CI_REPO_OWNER}/datapack-generator:latest

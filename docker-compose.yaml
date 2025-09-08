@@ -2,11 +2,7 @@ version: "3.9"
 
 services:
   datapack:
-    image: hpf3/datapack-generator
-    build:
-      context: .
-      dockerfile: Dockerfile   # optional if your file is named "Dockerfile"
-      pull: true     
+    image: ghcr.io/hpf3/datapack-generator:latest
     # Always restart the container unless it is manually stopped
     restart: unless-stopped
     # No environment variables are required when serving static files with Nginx
